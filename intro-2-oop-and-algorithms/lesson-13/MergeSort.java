@@ -1,17 +1,24 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class MergeSort {
   public static void main(String[] args) {
-    int[] nums = { 5, 5, 3, 3, 2, 2, 1 };
-    sort(nums);
-    System.out.println(Arrays.toString(nums));
+    int BOUND = 1000000;
+    Comparable[] integers = new Integer[BOUND];
+    Random rand = new Random();
+
+    for (int i = 0; i < integers.length; i++) {
+      integers[i] = rand.nextInt(BOUND);
+    }
+    sort(integers);
+    System.out.println(Arrays.toString(integers));
   }
 
-  public static void sort(int[] nums) {
+  public static void sort(Comparable[] nums) {
     mergeSort(nums, 0, nums.length - 1);
   }
 
-  public static void mergeSort(int[] list, int start, int end) {
+  public static void mergeSort(Comparable[] list, int start, int end) {
     if (start == end) {
       return;
     }
@@ -22,15 +29,17 @@ public class MergeSort {
     merge(list, start, start + mid + 1, end);
   }
 
-  private static void merge(int[] list, int leftHalfStart, int rightHalfStart, int end) {
+  private static void merge(Comparable[] list, int leftHalfStart, int rightHalfStart, int end) {
     int leftHalfSize = rightHalfStart - leftHalfStart;
     int rightHalfSize = end - rightHalfStart + 1;
 
-    int[] leftList = new int[leftHalfSize];
-    int[] rightList = new int[rightHalfSize];
+    Comparable[] leftList = new Comparable[leftHalfSize];
+    Comparable[] rightList = new Comparable[rightHalfSize];
 
-    System.out.println("left half start is " + leftHalfStart + ". Right half start is " + rightHalfStart);
-    System.out.println("left half size is " + leftHalfSize + ". Right half start is " + rightHalfSize);
+    // System.out.println("left half start is " + leftHalfStart + ". Right half
+    // start is " + rightHalfStart);
+    // System.out.println("left half size is " + leftHalfSize + ". Right half start
+    // is " + rightHalfSize);
     for (int i = 0; i < leftHalfSize; i++) {
       leftList[i] = list[i + leftHalfStart];
     }
@@ -44,7 +53,7 @@ public class MergeSort {
     int smallestIndex = leftHalfStart;
 
     while (leftListIndex < leftHalfSize && rightListIndex < rightHalfSize) {
-      if (leftList[leftListIndex] <= rightList[rightListIndex]) {
+      if (leftList[leftListIndex].compareTo(rightList[rightListIndex]) <= 0) {
         list[smallestIndex] = leftList[leftListIndex];
         leftListIndex++;
       } else {
