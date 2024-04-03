@@ -30,3 +30,12 @@ public class Insect {
 - methods that do not represent actions that would be performed on the **specific object** of a class should be static.
 - instance variable that is static is shared among every instance of the class, thus saving memories
 - a static method cannot directly access non-static members (instance variable/method) since it can be called without instance being created
+
+## Access modifiers
+
+| Modifier    | Class | Package | Subclasses | World |
+| ----------- | ----- | ------- | ---------- | ----- |
+| public      | ✅    | ✅      | ✅         | ✅    |
+| protected   | ✅    | ✅      | ✅         | ❌    |
+| no modifier | ✅    | ✅      | ❌         | ❌    |
+| private     | ✅    | ❌      | ❌         | ❌    |

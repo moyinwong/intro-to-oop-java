@@ -7,7 +7,7 @@ public class Pond {
 
     Fly flyA = new Fly(1, 3);
     Fly flyB = new Fly(6);
-    Fly flyC = new Fly(2, 2);
+    Fly flyC = new Fly(10, 50);
 
     Frog.setSpecies("1331 Frogs");
 
@@ -26,5 +26,8 @@ public class Pond {
     System.out.println(peepaw);
 
     System.out.println(pepe);
+
+    flyC.grow(45);
+    System.out.println(flyC);
   }
 }

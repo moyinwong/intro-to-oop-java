@@ -45,10 +45,11 @@ public class Frog {
   }
 
   public String toString() {
+    double roundedTongueSpeed = Math.floor(tongueSpeed * 100) / 100;
     String froglotText = "My name is " + name + " and I’m a rare froglet! I’m " + age
-        + " months old and my tongue has a speed of " + tongueSpeed + ".";
+        + " months old and my tongue has a speed of " + roundedTongueSpeed + ".";
     String frogText = "My name is " + name + " and I’m a rare frog. I’m " + age
-        + " months old and my tongue has a speed of " + tongueSpeed + ".";
+        + " months old and my tongue has a speed of " + roundedTongueSpeed + ".";
     return isFroglet ? froglotText : frogText;
   }
 
@@ -59,7 +60,7 @@ public class Frog {
       if (age <= 12) {
         tongueSpeed++;
       }
-      if (age >= 30 && tongueSpeed > 5) {
+      if (age > 30 && tongueSpeed > 5) {
         tongueSpeed--;
       }
 
