@@ -7,6 +7,10 @@
 - methods are default `abstract` and `public`
 - If a superclass implements an interface, the subclass also need to implment it
 
+### Functional interface
+
+A **functional interface** is interface with **only 1 abstract** method
+
 ## Generic Type
 
 - a generic type is an interface or class that is capable of accepting input that identifies the kinds of data (i.e., types) it can work with
